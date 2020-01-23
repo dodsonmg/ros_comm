@@ -572,7 +572,7 @@ void Subscription::pendingConnectionDone(const PendingConnectionPtr& conn, XmlRp
     if (pub_link->setHeader(h))
     {
       ConnectionPtr connection(boost::make_shared<Connection>());
-      connection->initialize(udp_transport, false, NULL);
+      connection->initialize(udp_transport, false, 0);
       connection->setHeader(h);
       pub_link->initialize(connection);
 

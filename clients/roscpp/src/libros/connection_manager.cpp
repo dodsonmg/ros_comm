@@ -178,7 +178,7 @@ void ConnectionManager::udprosIncomingConnection(const TransportUDPPtr& transpor
   ConnectionPtr conn(boost::make_shared<Connection>());
   addConnection(conn);
 
-  conn->initialize(transport, true, NULL);
+  conn->initialize(transport, true, 0);
   onConnectionHeaderReceived(conn, header);
 }
 
