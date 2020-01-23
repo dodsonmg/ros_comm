@@ -25,6 +25,10 @@ add_definitions(-D_FILE_OFFSET_BITS=64)
 include_directories(include ${catkin_INCLUDE_DIRS} ${console_bridge_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS} ${BZIP2_INCLUDE_DIR})
 add_definitions(${BZIP2_DEFINITIONS})
 
+if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
+  link_directories(/usr/local/lib)
+endif()
+
 set(AES_ENCRYPT_SOURCE "")
 set(AES_ENCRYPT_LIBRARIES "")
 if(NOT WIN32)
